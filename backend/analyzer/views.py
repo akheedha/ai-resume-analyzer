@@ -55,6 +55,7 @@ def resume_list(request):
                 text += page.get_text()
 
             # AI REQUEST
+            print("API KEY:", os.getenv("OPENROUTER_API_KEY"))
             completion = client.chat.completions.create(
 
                 model="deepseek/deepseek-chat",
