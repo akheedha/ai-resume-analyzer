@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^p2*a7jinx5+ujof#d!y+gc-3(2d)x876m85h5_2%fkhhf)5*w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -141,3 +141,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
 ]
+import os
+import dj_database_url
+
+STATIC_URL = 'static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MIDDLEWARE.insert(
+    1,
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+)
