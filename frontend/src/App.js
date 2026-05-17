@@ -57,7 +57,8 @@ console.log(formData.get("resume_file"));
 
       const response = await axios.post(
 
-  "http://127.0.0.1:8000/api/resumes/",
+      "https://resumeforge-ai-backend-uu4a.onrender.com/api/resumes/",
+
   formData,
   {
     headers: {
@@ -82,16 +83,33 @@ console.log(formData.get("resume_file"));
 
       }, 500);
 
-    } catch (error) {
+} catch (error) {
 
-      console.log(error);
+  console.log(error);
 
-      setLoading(false);
+  setLoading(false);
 
-      console.log(error.response?.data);
+  if (error.response && error.response.data) {
 
-      alert(JSON.stringify(error.response?.data));
-    }
+    alert(
+      error.response.data.error ||
+      JSON.stringify(error.response.data)
+    );
+
+  }
+
+  else if (error.request) {
+
+    alert("Backend not responding");
+
+  }
+
+  else {
+
+    alert(error.message);
+
+  }
+}
   };
 
   return (
