@@ -42,10 +42,10 @@ The platform helps users analyze resumes, improve ATS compatibility, identify mi
 ## Screenshots
 
 ### Dashboard UI
-(Add screenshot here)
+![Dashboard UI](./screenshots/dashboard.png)
 
 ### AI Resume Analysis
-(Add screenshot here)
+![AI Analysis](./screenshots/analysis.png)
 
 ---
 
