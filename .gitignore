@@ -3,3 +3,6 @@ node_modules/
 __pycache__/
 db.sqlite3
 media/
+.env
+*.env
+/package-lock.json
